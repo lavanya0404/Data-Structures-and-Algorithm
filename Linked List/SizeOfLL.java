@@ -37,6 +37,7 @@ public  class SizeOfLL {
     temp = temp.next;
   }
   System.out.print("null");
+  System.out.println("\nSize of LL "+size+" ");
  }
  public void insertMiddle(int index,int data){
       Node temp = head;
@@ -65,6 +66,6 @@ public  class SizeOfLL {
       ll.addLast(20);
       ll.insertMiddle(3,15);
       ll.printData();
-      System.out.println("\nSize of LL "+ll.size+" ");
+      
  }
 } 
