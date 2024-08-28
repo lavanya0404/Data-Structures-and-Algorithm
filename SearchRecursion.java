@@ -1,7 +1,7 @@
-
 import java.util.Scanner;
 
-public class SearchInLL {
+public class SearchRecursion {
+
     public static class Node{
      int data;
      Node next;
@@ -58,26 +58,27 @@ public class SearchInLL {
     System.out.print("null");
     System.out.println("\nSize of LL "+size+" ");
    }
-   
-   public int searchElement(int data){
-    // if(size==0){
-    //   System.out.println("NO VALUES To Search");
-    // }
-    Node temp = head;
-    int count = 0;
-    while(temp!=null){
-      if(temp.data == data){
-        return count+1;
-      }
-        temp=temp.next;
-        count++;
+   public int helper(Node temp,int key){
+    if(head== null){
+      return  -1;
     }
-    return -1;
+    if(head.data == key){
+      return 0;
+    }
+    int idx = helper(head.next, key);
+    if(idx==-1){
+      return -1;
+    }
+    return idx+1;
+   }
+   
+   public int searchRecur(int data){
+    return helper(head,data);
+
    }
    public static void main(String[] args) {
-    SearchInLL ll = new SearchInLL();
-        // ll.head = new Node(1);
-        // ll.head.next = new Node(2);
+    SearchRecursion ll = new SearchRecursion();
+
         ll.addFirst(3);
         ll.addFirst(4);
         ll.addLast(10);
@@ -88,7 +89,7 @@ public class SearchInLL {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the element to search:");
         int element = sc.nextInt();
-        int index = ll.searchElement(element);
+        int index = ll.searchRecur(element);
         if(index == -1){
           System.out.println("Element not found");
         }
@@ -97,3 +98,5 @@ public class SearchInLL {
         }   
    }
   } 
+
+
