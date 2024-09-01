@@ -1,9 +1,48 @@
-
 import java.util.Stack;
 
 public class nextGreater {
   public static void nextGreat(int[] arr, int[] nextGreat) {
     Stack<Integer> s = new Stack<Integer>();
+    /* 
+     *for nextSmaller 
+      for (int i = arr.length - 1; i >= 0; i--) {
+      while(!s.isEmpty() && (arr[s.peek()]>=arr[i]))
+      {
+        s.pop();
+      }
+        if(s.isEmpty())
+        {
+          nextGreat[i] = -1;
+        }
+        else{
+          nextGreat[i]= arr[s.peek()];
+        }
+        s.push(i);
+    }
+    */ 
+    /*
+     * for previous Greater
+      for (int i=0; i<arr.length; i++)
+      {
+      while(!s.isEmpty() && (arr[s.peek()]<=arr[i]))
+      {
+        s.pop();
+      }
+        similar 
+      }
+     */
+
+      /*
+     * for previous Smaller
+      for (int i=0; i<arr.length; i++)
+      {
+      while(!s.isEmpty() && (arr[s.peek()]>=arr[i]))
+      {
+        s.pop();
+      }
+        similar 
+      }
+     */
     for (int i = arr.length - 1; i >= 0; i--) {
       while(!s.isEmpty() && (arr[s.peek()]<=arr[i]))
       {
