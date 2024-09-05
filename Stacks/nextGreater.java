@@ -44,7 +44,7 @@ public class nextGreater {
       }
      */
     for (int i = arr.length - 1; i >= 0; i--) {
-      while(!s.isEmpty() && (arr[s.peek()]<=arr[i]))
+      while(!s.isEmpty() && (s.peek()<=arr[i]))
       {
         s.pop();
       }
@@ -55,7 +55,7 @@ public class nextGreater {
       else{
         nextGreat[i]= arr[s.peek()];
       }
-      s.push(i);
+      s.push(arr[i]);
     }
   }
   public static void main(String[] args) {
