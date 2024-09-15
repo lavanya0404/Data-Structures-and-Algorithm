@@ -1,8 +1,8 @@
 
 import java.util.LinkedList;
 import java.util.Queue;
+// Recursive tree traversal - Pre Order , In Order , Post Order
 
-// Recursive tree traversal - Pre order , In order , Post order
 public class TreeTraversal {
 
     static class Node {
@@ -32,66 +32,61 @@ public class TreeTraversal {
             newNode.right = buildTree(nodes);
             return newNode;
         }
-        public static void preOrder(Node root)
-        {
-          if(root == null)
-          {
-            return;
-          }
-          System.out.print(root.data+" ");
-          preOrder(root.left);
-          preOrder(root.right);
+
+        public static void preOrder(Node root) {
+            if (root == null) {
+                return;
+            }
+            System.out.print(root.data + " ");
+            preOrder(root.left);
+            preOrder(root.right);
         }
-        public static void inOrder(Node root)
-        {
-          if(root == null)
-          {
-            return;
-          }
-          inOrder(root.left);
-          System.out.print(root.data+" ");
-          inOrder(root.right);
+
+        public static void inOrder(Node root) {
+            if (root == null) {
+                return;
+            }
+            inOrder(root.left);
+            System.out.print(root.data + " ");
+            inOrder(root.right);
         }
-        public static void postOrder(Node root)
-        {
-          if(root == null)
-          {
-            return;
-          }
-          postOrder(root.left);
-          postOrder(root.right);
-          System.out.print(root.data+" ");
+
+        public static void postOrder(Node root) {
+            if (root == null) {
+                return;
+            }
+            postOrder(root.left);
+            postOrder(root.right);
+            System.out.print(root.data + " ");
         }
+
         // Level Order Travesrsal -- Iterative Approach
-        public static void levelOrder(Node root)
-        {
-          Queue<Node> q = new LinkedList<>();
-          if(root == null)
-          return;
-          q.add(root);
-          q.add(null);
-          while(!q.isEmpty())
-          {
-            Node curNode = q.remove();
-            if(curNode == null){
-            System.out.println();
-            if(q.isEmpty()){
-            break;
-            } else {
-              q.add(null);
+        public static void levelOrder(Node root) {
+            Queue<Node> q = new LinkedList<>();
+            if (root == null) {
+                return;
             }
-          }else{
-            System.out.print(curNode.data+" ");
-            if(curNode.left!=null)
-            {
-              q.add(curNode.left);
+            q.add(root);
+            q.add(null);
+            while (!q.isEmpty()) {
+                Node curNode = q.remove();
+                if (curNode == null) {
+                    System.out.println();
+                    if (q.isEmpty()) {
+                        break;
+                    } else {
+                        q.add(null);
+                    }
+                } else {
+                    System.out.print(curNode.data + " ");
+                    if (curNode.left != null) {
+                        q.add(curNode.left);
+                    }
+                    if (curNode.right != null) {
+                        q.add(curNode.right);
+                    }
+                }
             }
-            if(curNode.right!=null)
-            {
-              q.add(curNode.right);
-            }
-          }
-          }
         }
     }
 
@@ -100,9 +95,9 @@ public class TreeTraversal {
         BinaryTree tree = new BinaryTree();
         Node root = tree.buildTree(nodes);
         // System.out.println(root.data);
-        System.out.println("\nPre order");
+        System.out.println("Pre order");
         tree.preOrder(root);
-      System.out.println("\nIn order");
+        System.out.println("\nIn order");
         tree.inOrder(root);
         System.out.println("\nPost Order");
         tree.postOrder(root);
