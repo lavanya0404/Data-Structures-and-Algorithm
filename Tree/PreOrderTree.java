@@ -1,5 +1,3 @@
-package Tree;
-
 public class PreOrderTree {
 
     static class Node {
