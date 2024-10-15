@@ -10,25 +10,25 @@ public class divideNumberUsingBS {
             dividend = sc.nextInt();
             divisor = sc.nextInt();
             quotient = divide(Math.abs(divisor), Math.abs(dividend));
-            if((dividend < 0 && divisor < 0) || (dividend > 0 && divisor > 0)){
+            if ((dividend < 0 && divisor < 0) || (dividend > 0 && divisor > 0)) {
                 System.out.println(quotient);
+            } else {
+                System.out.println(-1 * quotient);
             }
-            else{
-                System.out.println(-1*quotient);
-            } System.out.println("Enter precision");
+            System.out.println("Enter precision");
             int prec = sc.nextInt();
             double finalAns = quotient;
             double step = 0.1;
-            for(int i =0;i<prec ; i++){
-                for(double j = finalAns; j*divisor<=dividend ; j+=step){
+            for (int i = 0; i < prec; i++) {
+                for (double j = finalAns; j * divisor <= dividend; j += step) {
                     finalAns = j;
                 }
-                step/=10;
-            }   if((dividend < 0 && divisor < 0) || (dividend > 0 && divisor > 0)){
-                System.out.println(finalAns);
+                step /= 10;
             }
-            else{
-                System.out.println(-1*finalAns);
+            if ((dividend < 0 && divisor < 0) || (dividend > 0 && divisor > 0)) {
+                System.out.println(finalAns);
+            } else {
+                System.out.println(-1 * finalAns);
             }
         }
     }
@@ -41,7 +41,7 @@ public class divideNumberUsingBS {
             mid = st + (end - st) / 2;
             if (mid * divisor == dividend) {
                 return mid;
-            } 
+            }
             if (mid * divisor > dividend) {
                 end = mid - 1;
             } else {
@@ -49,6 +49,6 @@ public class divideNumberUsingBS {
                 st = mid + 1;
             }
         }
-return  ans;
+        return ans;
     }
 }
