@@ -1,4 +1,3 @@
-import java.*;
 public class DiameterOfTree {
  
     static class Node {
@@ -38,19 +37,19 @@ public class DiameterOfTree {
         if(root == null)
           return 0;
         int ld = diameterOfTree(root.left);
-        int rd = diameterOfTree(root.right);
         int lh = heightOfTree(root.left);
+        int rd = diameterOfTree(root.right);
         int rh = heightOfTree(root.right);
         int selfDia = lh+rh+1;
-        int dia = Math.max(ld, rd,selfDia);
+        int dia = Math.max(selfDia,Math.max(ld, rd));
         return dia;
       }  
     }
     public static void main(String[] args) {
-      int[] nodes = {1, 2, 4,-1,-1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
+      int[] nodes = {1, 2, 4,4,-1,-1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
       BinaryTree tree = new BinaryTree();
       Node root = tree.buildTree(nodes);
-      System.out.println(tree.heightOfTree(root));
+      System.out.println(tree.diameterOfTree(root));
       
     }
   }
