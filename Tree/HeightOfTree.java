@@ -1,11 +1,8 @@
-public class HeightOfTree {
-   
+public class HeightOfTree {  
   static class Node {
-
     int data;
     Node left;
     Node right;
-
     Node(int data) {
         this.data = data;
         this.left = null;
@@ -33,8 +30,7 @@ public class HeightOfTree {
       int height = Math.max(lh,rh)+1;
       return height;
     }
-    public static int countNode(Node root)
-    {
+    public static int countNode(Node root) {
       if(root == null)
         return 0;
       int lcount= countNode(root.left);
@@ -42,8 +38,7 @@ public class HeightOfTree {
       int count = lcount+rcount+1;
       return count;
     }
-    public static int sumOfNode(Node root)
-    {
+    public static int sumOfNode(Node root) {
       if(root == null)
         return 0;
       

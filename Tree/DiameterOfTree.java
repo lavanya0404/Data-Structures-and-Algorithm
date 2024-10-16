@@ -1,12 +1,9 @@
 public class DiameterOfTree {
- 
-    static class Node {
-  
+    static class Node {  
       int data;
       Node left;
       Node right;
-  
-      Node(int data) {
+        Node(int data) {
           this.data = data;
           this.left = null;
           this.right = null;
@@ -24,8 +21,7 @@ public class DiameterOfTree {
         newNode.right = buildTree(nodes);
         return newNode;
       }
-      public static int heightOfTree(Node root)
-      {
+      public static int heightOfTree(Node root) {
         if(root==null)
           return 0;
         int lh = heightOfTree(root.left);
@@ -33,7 +29,7 @@ public class DiameterOfTree {
         int height = Math.max(lh,rh)+1;
         return height;
       }
-      public static int diameterOfTree(Node root){
+      public static int diameterOfTree(Node root) {
         if(root == null)
           return 0;
         int ld = diameterOfTree(root.left);

@@ -1,20 +1,14 @@
-
 public class DiameterOfTree_2 {
-
     static class Node {
-
         int data;
         Node left;
         Node right;
-
         Node(int data) {
             this.data = data;
             this.left = null;
             this.right = null;
         }
-    }
-   
-        
+    }    
         public static int heightOfTree(Node root) {
             if (root == null) {
                 return 0;
@@ -25,19 +19,15 @@ public class DiameterOfTree_2 {
             return height;
         }
        static class Info {
-
         int diam;
         int ht;
-
         public Info(int diam, int ht) {
             this.diam = diam;
             this.ht = ht;
         }
     }
-    public static Info diameter(Node root)
-    {
-      if(root == null)
-      {
+    public static Info diameter(Node root) {
+      if(root == null) {
         return new Info(0, 0);
       }
        Info leftInfo = diameter(root.left);

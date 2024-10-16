@@ -1,27 +1,19 @@
-
 import java.util.LinkedList;
 import java.util.Queue;
 // Recursive tree traversal - Pre Order , In Order , Post Order
-
 public class TreeTraversal {
-
     static class Node {
-
         int data;
         Node left;
         Node right;
-
         Node(int data) {
             this.data = data;
             this.left = null;
             this.right = null;
         }
     }
-
-    static class BinaryTree {
-
+   static class BinaryTree {
         static int idx = -1;
-
         public static Node buildTree(int[] nodes) {
             idx++;
             if (nodes[idx] == -1) {
@@ -32,7 +24,6 @@ public class TreeTraversal {
             newNode.right = buildTree(nodes);
             return newNode;
         }
-
         public static void preOrder(Node root) {
             if (root == null) {
                 return;
@@ -41,7 +32,6 @@ public class TreeTraversal {
             preOrder(root.left);
             preOrder(root.right);
         }
-
         public static void inOrder(Node root) {
             if (root == null) {
                 return;
@@ -50,7 +40,6 @@ public class TreeTraversal {
             System.out.print(root.data + " ");
             inOrder(root.right);
         }
-
         public static void postOrder(Node root) {
             if (root == null) {
                 return;
