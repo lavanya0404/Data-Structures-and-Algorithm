@@ -26,10 +26,6 @@ class Dog extends Mammal {
   }
 }
 
-
-
-
-
 class Fish extends Animal
 {
   void fins(int fin)

@@ -28,15 +28,15 @@ class CreateBalancedBST {
       }
       return root;
   }
-    public static Node createBST(Node root, int st, int end)
+    public static Node createBST(int arr[], int st, int end)
     {
       if(st>end){
         return null;
       }
       int mid = (st+end)/2;
-      Node ele = new Node(mid);
-      ele.left = createBST(ele, st, mid-1);
-      ele.right = createBST(ele, mid+1, end);
+      Node ele = new Node(arr[mid]);
+      ele.left = createBST(arr, st, mid-1);
+      ele.right = createBST(arr, mid+1, end);
       return ele;
     }
 
@@ -46,8 +46,8 @@ class CreateBalancedBST {
         for(int i=0;i<arr.length;i++){
           root = insert(root, arr[i]);
         }
-        System.out.println(heightOfTree(root));
-        Node secRoot = createBST(root, 0, arr.length-1);
-        System.out.println(heightOfTree(secRoot));
+        System.out.println(heightOfTree(root)+" "+ root.data);
+        Node secRoot = createBST(arr, 0, arr.length-1);
+        System.out.println(heightOfTree(secRoot)+" "+ secRoot.data);
     }
 }
