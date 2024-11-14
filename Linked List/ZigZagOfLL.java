@@ -31,7 +31,8 @@ public class ZigZagOfLL {
     System.out.print("null");
     System.out.println("\nSize of LL "+size+" ");
    }
-  public static Node findMid(Node head) {
+  
+   public static Node findMid(Node head) {
       Node slow = head, fast = head.next;
       while (fast != null && fast.next != null) {
           slow = slow.next;
@@ -55,6 +56,7 @@ public class ZigZagOfLL {
       prev = curr;
       curr = next;
     }
+    
     Node left = head;
     Node right = prev;
     Node nextL,nextR;

@@ -12,7 +12,7 @@ public class charArray {
         ch = sc.next();
       }
       for (int i = 0; i < ch.length(); i++) {
-        System.err.println(ch.charAt(i));
+        System.out.println(ch.charAt(i));
       }
       sc.close();
     }
