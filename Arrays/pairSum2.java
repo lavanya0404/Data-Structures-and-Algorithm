@@ -38,7 +38,7 @@ public static void main(String[] args){
   list.add(8);
   list.add(10);
   list.add(15);
-  int target =120 ;
+  int target =50 ;
   System.out.println(pairSum(list, target));
 }
 }
