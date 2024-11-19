@@ -22,7 +22,7 @@ public class binarySearchFor2D_Array {
         int end = row * column-1;
         int mid;
         while (st <= end) {
-            mid = st + (end - st) / 2;
+            mid = st  + (end - st) / 2;
             rowIndex = mid / column;
             columnIndex = mid % column;
             if (arr[rowIndex][columnIndex] == target) {

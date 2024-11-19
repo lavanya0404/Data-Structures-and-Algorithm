@@ -11,7 +11,7 @@ public class FirstOccur {
             arr.add(i);
         }
         int target = 4;
-        
+        // System.out.println(arr);
        System.out.println(binarySearch(arr, target));
       }
 public static int binarySearch(ArrayList <Integer> arr,int target){

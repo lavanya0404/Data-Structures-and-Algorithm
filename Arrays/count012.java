@@ -2,11 +2,11 @@
 // public class count012{
 //   public static void swap( ArrayList<Integer>list,int i , int j){
 //     int temp = list.get(i);
-//     // System.err.println(temp);
-//     // System.out.println("i "+i+" j "+j);
+    // System.err.println(temp);
+    // System.out.println("i "+i+" j "+j);
 //     list.set(i,list.get(j));
 //     list.set(j,temp);
-//     // System.out.println("i "+i+" j "+j);
+    // System.out.println("i "+i+" j "+j);
 //   }
 //   public static void main(String[] args) {
 //     ArrayList <Integer> list = new ArrayList<>();
@@ -75,7 +75,7 @@
 //       m++;
 //     }
 //     else if (list.get(m)==1){
-//       // swap(list, h, h);
+      // swap(list, h, h);
 //       m++;
 //     }
 //     else{
